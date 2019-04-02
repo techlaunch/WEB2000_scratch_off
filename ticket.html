@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scratch off</title>
+	<style type="text/css">
+		#offer {
+			background: url(link to other img); 
+			background-size: cover;
+			position: absolute;
+			top: 100px;
+			left: 100px;
+			z-index: 1;
+		}
+
+		#coupon {
+			position: absolute;
+			top: 100px;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Scratch here</h1>
+	<canvas id="offer" width="500" height="500"></canvas>
+	<img id="coupon" src="https://www.officedepot.com/fm/files/od/tiles/2018/week_21/2118_500x500_20prcnt_off.jpg">
+
+	<script type="text/javascript">
+		// get the canvas and the context
+		var offer = document.getElementById('offer');
+		var ctx = offer.getContext("2d");
+
+		// create a new image for canvas
+		var img = new Image();
+		img.src = "https://pbs.twimg.com/profile_images/871363219750825984/ubH-MVav.jpg";
+
+		// wait till elements are rendered
+		window.onload = function() {
+			// add an image to canvas
+			ctx.drawImage(img, 0, 0);
+
+			// add mouse trigger for canvas 
+			offer.onmousemove = function(e) {
+				var x = e.offsetX;
+				var y = e.offsetY;
+				ctx.clearRect(x, y, 50, 50);
+			} 
+		};
+	</script>
+</body>
+</html>
