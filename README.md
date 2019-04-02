@@ -1,2 +1,2 @@
 # WEB2000_scratch_off
-Scratch off sales coupons.
+Am HTML canvas example of how to scratch off sales coupons using JavaScript.
